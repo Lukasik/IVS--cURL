@@ -13,3 +13,10 @@ pack: clean
 
 clean:
 	rm -fR  *.o xvokra00 doc
+
+debug: flags = -pedantic -std=c99 -Wextra -Wall -g3
+debug: xvokra00
+
+doc:
+	doxygen
+	make -C doc
