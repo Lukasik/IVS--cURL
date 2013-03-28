@@ -17,6 +17,9 @@ clean:
 debug: flags = -pedantic -std=c99 -Wextra -Wall -g3
 debug: xvokra00
 
+prof: flags = -pedantic -std=c99 -Wextra -Wall -pg
+prof: xvokra00
+
 doc:
 	doxygen
 	make -C doc
