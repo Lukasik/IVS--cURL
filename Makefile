@@ -1,0 +1,9 @@
+flags = -pedantic -std=c99 -Wextra -Wall
+
+all: xvokra00
+
+obj:
+	gcc *.c -c $(flags)
+
+xvokra00: obj
+	gcc wget.o parity.o xvokra00.o error.o $(flags) -I../curl/include/ -L ../curl/lib/.libs/ -lcurl -o xvokra00
