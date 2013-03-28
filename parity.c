@@ -17,7 +17,6 @@ int parity(const char* fileName)
 	FILE* file;
 	int parity = 0;
 	char byte;
-	char byteXOR = 0;
 
 	file = fopen(fileName, "rb");
 
@@ -25,7 +24,11 @@ int parity(const char* fileName)
 	{
 		while(fscanf(file, "%c", &byte) == 1)
 		{
-			byteXOR ^= byte;
+			//xvokra00 debug
+			for(int i = 0; i < 8; ++i)
+			{
+				parity ^= byte >> i & 1;
+			}
 		}
 	}
 	else
@@ -34,11 +37,6 @@ int parity(const char* fileName)
 	}
 
 	fclose(file);
-
-	for(int i = 0; i < 8; ++i)
-	{
-		parity ^= byteXOR >> i & 1;
-	}
 
 	return parity;
 }
