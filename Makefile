@@ -2,10 +2,10 @@ flags = -pedantic -std=c99 -Wextra -Wall
 
 all: xvokra00
 
-obj:
-	gcc *.c -c $(flags)
+%.o:%.c
+	gcc $< -c $(flags)
 
-xvokra00: obj
+xvokra00: wget.o parity.o xvokra00.o error.o
 	gcc wget.o parity.o xvokra00.o error.o $(flags) -I../curl/include/ -L ../curl/lib/.libs/ -lcurl -o xvokra00
 
 pack: clean
@@ -22,7 +22,7 @@ prof: xvokra00
 
 doc:
 	doxygen
-	make -C doc
+	make -C ./doc/
 
 test: testCurl testParity
 	@rm -f fit vut wget_vut wget_fit
