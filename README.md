@@ -1,12 +1,6 @@
-# CURL
+IVS: cURL
+====================================
+Projekt do předmětu Praktické aspekty vývoje software (2. semestr FIT VUT) ve stavu, v jakém byl odevzdán k hodnocení.
 
-Projekty jsou zde v takovém stavu, ve kterém jsem je odevzdával k hodnocení.
-
-## Hodnocení
-
- 21/23
-
-## Chyby
-
- * -2.0 ?
-
+### Hodnocení
+21/23
